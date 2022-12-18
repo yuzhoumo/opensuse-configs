@@ -6,11 +6,14 @@
 # Packages to install
 zypper_pkgs=(
   bat
+  btop
   chromium
   deluge
   flatpak
   gcc-c++
   git
+  gnome-themes
+  gnome-shell-extension-user-theme
   htop
   kitty
   neofetch
@@ -23,6 +26,7 @@ zypper_pkgs=(
   rustup
   MozillaThunderbird
   ShellCheck
+  steam
   torbrowser-launcher
   tmux
   tree
