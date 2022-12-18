@@ -8,7 +8,6 @@ zypper_pkgs=(
   bat
   chromium
   deluge
-  discord
   flatpak
   gcc-c++
   git
@@ -19,9 +18,11 @@ zypper_pkgs=(
   nodejs-default
   nvidia-glG06
   x11-video-nvidiaG06
+  polybar
   protonvpn-gui
   rustup
   MozillaThunderbird
+  ShellCheck
   torbrowser-launcher
   tmux
   tree
@@ -34,6 +35,7 @@ zypper_pkgs=(
 # Flatpaks to install
 flathub_pkgs=(
   com.bitwarden.desktop
+  com.discordapp.Discord
   md.obsidian.Obsidian
   ch.protonmail.protonmail-bridge
   org.signal.Signal
@@ -66,27 +68,24 @@ zypper_rm=(
 )
 
 # Enable third party repositories and resolve conflicts
-printf "\n\x1b[33m### Enabling packman repository...\x1b[0m\n\n"
-sudo zypper ar --refresh https://download.nvidia.com/opensuse/tumbleweed NVIDIA
-sudo zypper ar -cfp 90 https://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Tumbleweed/ packman
+printf "\nEnabling third-party repositories...\n\n"
+sudo zypper --gpg-auto-import-keys ar --refresh \
+  https://download.nvidia.com/opensuse/tumbleweed NVIDIA
+sudo zypper --gpg-auto-import-keys ar -cfp 90 \
+  https://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Tumbleweed/ packman
 sudo zypper dup --from packman --allow-vendor-change
 
-printf "\n\x1b[33m### Removing pre-installed packages...\x1b[0m\n\n"
-for p in "${zypper_rm[@]}"; do
-  sudo zypper -n rm "${p}"
-done
+printf "\nRemoving pre-installed packages...\n\n"
+sudo zypper -n rm "${zypper_rm[@]}"
 
-printf "\n\x1b[33m### Installing packages...\x1b[0m\n\n"
+printf "\nInstalling packages...\n\n"
 
 # Install packages from zypper
-sudo zypper refresh && sudo zypper update
-for p in "${zypper_pkgs[@]}"; do
-  sudo zypper -n install --auto-agree-with-licenses "${p}"
-done
+sudo zypper -n refresh && sudo zypper update -y
+sudo zypper -n install --auto-agree-with-licenses "${zypper_pkgs[@]}"
 
 # Install packages from flathub
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-for p in "${flathub_pkgs[@]}"; do
-  sudo flatpak install -y --noninteractive "${p}"
-done
+sudo flatpak install -y --noninteractive "${flathub_pkgs[@]}"
 
+printf "\nPackages have been installed\n"
