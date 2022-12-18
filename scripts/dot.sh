@@ -14,7 +14,7 @@ ff_profiles_dir="${HOME}/.mozilla/firefox"
 # Set zsh as shell
 printf "\nSetting zsh as default shell...\n\n"
 grep -w 'zsh' /etc/shells || command -v zsh | sudo tee -a /etc/shells
-[[ $SHELL =~ ^.*/zsh$ ]] || sudo chsh -s $(which zsh) $USER
+[[ $SHELL =~ ^.*/zsh$ ]] || sudo chsh -s "$(which zsh)" "$USER"
 
 # Set dotfiles
 printf "\nInstalling dotfiles...\n\n"

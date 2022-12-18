@@ -14,6 +14,7 @@ zypper_pkgs=(
   git
   gnome-themes
   gnome-shell-extension-user-theme
+  gnome-shell-extension-pop-shell
   htop
   kitty
   neofetch
