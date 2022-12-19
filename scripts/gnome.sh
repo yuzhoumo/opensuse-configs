@@ -3,6 +3,9 @@
 # Author: Yuzhou "Joe" Mo (@yuzhoumo)
 # License: GNU GPLv3
 
+# Navigate to current directory
+cd "$(dirname "${0}")" || exit
+
 # Set wallpaper
 printf "\nSetting wallpaper...\n"
 wallpaper_path="${HOME}/Pictures/wallpaper.png"

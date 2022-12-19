@@ -11,6 +11,9 @@ dotscript="sync.sh"
 ff_userjs="../assets/firefox/user.js"
 ff_profiles_dir="${HOME}/.mozilla/firefox"
 
+# Navigate to current directory
+cd "$(dirname "${0}")" || exit
+
 # Set zsh as shell
 printf "\nSetting zsh as default shell...\n\n"
 grep -w 'zsh' /etc/shells || command -v zsh | sudo tee -a /etc/shells
