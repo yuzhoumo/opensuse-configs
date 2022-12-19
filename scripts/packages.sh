@@ -91,7 +91,7 @@ sudo zypper -n rm "${zypper_rm[@]}"
 printf "\nInstalling packages...\n\n"
 
 # Install missing multimedia codecs
-sudo zypper install --from packman ffmpeg \
+sudo zypper -n install --auto-agree-with-licenses --from packman ffmpeg \
   gstreamer-plugins-{good,bad,ugly,libav} libavcodec-full vlc-codecs
 
 # Install packages from zypper
