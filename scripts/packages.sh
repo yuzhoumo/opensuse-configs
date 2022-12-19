@@ -68,13 +68,17 @@ zypper_rm=(
   gnome-remote-desktop
   gnome-sudoku
   iagno                 # reversi game
+  lightsoff             # puzzle game
   opensuse-welcome      # welcome page
   pidgin                # messaging client
   polari                # irc client
   quadrapassel          # tetris clone
   swell-foop            # matching game
+  tigervnc              # vnc client
+  totem                 # video player
   transmission-gtk      # torrent client
   vinagre               # remote desktop lib
+  xscreensaver
 )
 
 # Enable third party repositories and resolve conflicts
