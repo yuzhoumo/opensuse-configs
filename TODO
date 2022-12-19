@@ -1,0 +1,35 @@
+gnome tweaks:
+  - set catppuccin GTK theme
+  - set mouse acceleration to flat
+  - enable toggle maximize/minimize in titlebars
+
+install gnome extensions:
+  - dash to dock
+    - set dock icons
+    - icon size limit 32
+    - shrink the dash
+    - dynamic opacity
+  - hide activities button
+  - removable drive menu
+  - status area horizontal spacing
+  - tray icons: reloaded
+    - icon margin 4
+  - weather o clock
+
+disable conflicting commands with pop shell:
+  - disable super+left
+  - disable super+right
+
+settings:
+  - set wallpaper
+  - set profile picture
+  - set default applications
+  - add pinyin input
+  - set time to am/pm
+  - set device name
+
+firefox:
+  - install extensions
+  - set default search engine
+  - set catppuccin theme
+
