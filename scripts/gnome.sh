@@ -13,6 +13,10 @@ cp ../assets/images/wallpaper.png "$wallpaper_path"
 gsettings set org.gnome.desktop.background picture-uri "file://${wallpaper_path}"
 gsettings set org.gnome.desktop.background picture-uri-dark "file://${wallpaper_path}"
 
+# Set profile picture
+printf "\nSetting profile picture...\n"
+sudo cp ../assets/images/profile.png "/var/lib/AccountsService/icons/${USER}"
+
 # Add ibus input to Gnome kitty shortcut
 printf "\nSetting kitty shortcut to use ibus...\n"
 sudo cp ../assets/gnome/kitty.desktop /usr/share/applications/kitty.desktop
