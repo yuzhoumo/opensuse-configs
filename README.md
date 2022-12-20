@@ -26,3 +26,4 @@ Run scripts in the following order:
 - `packages.sh`: Install packages and remove unnecessary ones
 - `dot.sh`: Install dotfiles from [Github](https://github.com/yuzhoumo/dotfiles)
 - `gnome.sh`: Install Gnome extensions and set various tweaks/themes
+- `post.sh`: Set various configurations after everything is installed
