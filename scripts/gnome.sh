@@ -41,6 +41,10 @@ gsettings set org.gnome.desktop.wm.preferences button-layout appmenu:minimize,ma
 printf "\nDisabling mouse acceleration...\n"
 gsettings set org.gnome.desktop.peripherals.mouse accel-profile flat
 
+# Set clock format to 12 hour
+printf "\nSet clock format to AM/PM...\n"
+gsettings set org.gnome.desktop.interface clock-format '12h'
+
 # Install Gnome extensions
 #  307 | Dash to Dock
 #  744 | Hide Activities Button
@@ -51,3 +55,18 @@ gsettings set org.gnome.desktop.peripherals.mouse accel-profile flat
 printf "\nInstalling Gnome extensions...\n\n"
 ../assets/gnome/gnome-shell-extension-installer 307 744 7 355 2890 5470
 
+printf "\nConfiguring Gnome extensions...\n\n"
+#org.gnome.shell enabled-extensions ['user-theme@gnome-shell-extensions.gcampax.github.com', 'ding@rastersoft.com', 'Hide_Activities@shay.shayel.org', 'dash-to-dock@micxgx.gmail.com', 'pop-shell@system76.com', 'drive-menu@gnome-shell-extensions.gcampax.github.com', 'Move_Clock@rmy.pobox.com', 'gsconnect@andyholmes.github.io', 'network-stats@gnome.noroadsleft.xyz', 'status-area-horizontal-spacing@mathematical.coffee.gmail.com', 'blur-my-shell@aunetx', 'trayIconsReloaded@selfmade.pl', 'weatheroclock@CleoMenezesJr.github.io']
+# Dash to Dock
+sd="${HOME}/.local/share/gnome-shell/extensions/dash-to-dock@micxgx.gmail.com/schemas/"
+gsettings --schemadir "$sd" set org.gnome.shell.extensions.dash-to-dock custom-theme-shrink true
+gsettings --schemadir "$sd" set org.gnome.shell.extensions.dash-to-dock transparency-mode 'DYNAMIC'
+gsettings --schemadir "$sd" set org.gnome.shell.extensions.dash-to-dock dash-max-icon-size 32
+
+# Status Area Horizontal Spacing
+sd="${HOME}/.local/share/gnome-shell/extensions/status-area-horizontal-spacing@mathematical.coffee.gmail.com/schemas/"
+gsettings --schemadir "$sd" set org.gnome.shell.extensions.status-area-horizontal-spacing hpadding 1
+
+# Tray Icons: Reloaded
+sd="${HOME}/.local/share/gnome-shell/extensions/trayIconsReloaded@selfmade.pl/schemas/"
+gsettings --schemadir "$sd" set org.gnome.shell.extensions.trayIconsReloaded icon-margin-horizontal 4
