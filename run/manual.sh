@@ -14,10 +14,6 @@ printf "\nSet default apps...\n"
 gnome-control-center default-apps
 prompt_continue
 
-printf "\nSet time to AM/PM...\n"
-gnome-control-center datetime
-prompt_continue
-
 printf "\nSet language and disable conflicting keyboard shortcuts...\n"
 printf "  - close window: Super+Q\n"
 printf "  - hide window, maxmize window, restore window, view split: disabled\n"
