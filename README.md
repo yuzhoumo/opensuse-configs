@@ -27,3 +27,8 @@ Run scripts in the following order:
 - `dot.sh`: Install dotfiles from [Github](https://github.com/yuzhoumo/dotfiles)
 - `gnome.sh`: Install Gnome extensions and set various tweaks/themes
 - `post.sh`: Set various configurations after everything is installed
+
+### Notes
+
+- Scripts work with the Gnome installation of openSUSE Tumbleweed
+- Make sure to use X11 (otherwise may need a restart and re-run for Wayland)
