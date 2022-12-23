@@ -33,4 +33,12 @@ done
 printf "\nInstalling neovim plugins...\n\n"
 nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 
+# Fix screen tearing with Nvidia graphics
+s="$(nvidia-settings -q CurrentMetaMode -t)"
+if [[ "${s}" != "" ]]; then
+  printf "\nSetting Nvidia force composition pipeline...\n"
+  s="${s#*" :: "}"
+  nvidia-settings -a CurrentMetaMode="${s//\}/, ForceCompositionPipeline=On\}}"
+fi
+
 printf "\nCompleted post-install configurations\n"
