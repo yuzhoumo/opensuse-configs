@@ -110,6 +110,10 @@ gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'us'), ('ibus', 
 gsettings set org.gnome.desktop.input-sources mru-sources "[('xkb', 'us'), ('ibus', 'libpinyin')]"
 gsettings set org.freedesktop.ibus.general preload-engines "['xkb:us::eng', 'libpinyin']"
 
+# Disable hot corners
+printf "\nDisabling hot corners...\n"
+gsettings set org.gnome.desktop.interface enable-hot-corners false
+
 # Set keybindings and disable conflicts with Pop Shell
 printf "\nSetting Gnome keyboard shortcuts...\n"
 gsettings set org.gnome.shell.extensions.pop-shell focus-down "['<Super>j']"
