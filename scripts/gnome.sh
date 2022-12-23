@@ -91,6 +91,12 @@ gsettings set org.gnome.desktop.peripherals.mouse accel-profile flat
 printf "\nSetting clock format to AM/PM...\n"
 gsettings set org.gnome.desktop.interface clock-format '12h'
 
+# Set language input methods
+printf "\nSetting language input methods...\n"
+gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'us'), ('ibus', 'libpinyin')]"
+gsettings set org.gnome.desktop.input-sources mru-sources "[('xkb', 'us'), ('ibus', 'libpinyin')]"
+gsettings set org.freedesktop.ibus.general preload-engines "['xkb:us::eng', 'libpinyin']"
+
 # Set keybindings and disable conflicts with Pop Shell
 printf "\nSetting Gnome keyboard shortcuts...\n"
 gsettings set org.gnome.shell.extensions.pop-shell focus-down "['<Super>j']"
