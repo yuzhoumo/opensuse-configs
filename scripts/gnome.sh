@@ -64,7 +64,7 @@ sudo cp ../assets/images/profile.png "/var/lib/AccountsService/icons/${USER}"
 
 # Set Gnome shell theme
 printf "\nSetting Gnome shell theme to catppuccin...\n"
-theme="catppuccin-mocha-lavender"
+theme="gtk-catppuccin-mocha"
 mkdir -p "${HOME}/.themes/${theme}" && \
   cp -r "../assets/gnome/${theme}/." "${HOME}/.themes/${theme}/."
 gsettings set org.gnome.shell.extensions.user-theme name catppuccin-mocha-lavender
@@ -73,6 +73,20 @@ gsettings set org.gnome.desktop.interface gtk-theme catppuccin-mocha-lavender
 # Set Gnome dark theme
 printf "\nSetting Gnome dark theme...\n"
 gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
+
+# Set gedit theme and settings
+printf "\nSetting theme and configs for gedit...\n"
+theme="gedit-catppuccin-mocha.xml"
+mkdir -p "${HOME}/.local/share/gedit/styles" && \
+  cp "../assets/gnome/${theme}" "${HOME}/.local/share/gedit/styles/${theme}"
+gsettings set org.gnome.gedit.preferences.editor scheme "catppuccin_mocha"
+gsettings set org.gnome.gedit.plugins active-plugins "['spell', 'sort', 'quickhighlight', 'modelines', 'filebrowser', 'docinfo', 'snippets']"
+gsettings set org.gnome.gedit.preferences.editor editor-font "Hack Nerd Font Mono 12"
+gsettings set org.gnome.gedit.preferences.editor insert-spaces true
+gsettings set org.gnome.gedit.preferences.editor right-margin-position 80
+gsettings set org.gnome.gedit.preferences.editor search-highlighting true
+gsettings set org.gnome.gedit.preferences.editor tabs-size 4
+gsettings set org.gnome.gedit.preferences.editor use-default-font false
 
 # Add ibus input to Gnome kitty shortcut
 printf "\nSetting kitty shortcut to use ibus...\n"
