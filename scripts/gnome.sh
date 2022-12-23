@@ -51,6 +51,12 @@ gsettings --schemadir "$sd" set org.gnome.shell.extensions.trayIconsReloaded ico
 gsettings --schemadir "$sd" set org.gnome.shell.extensions.trayIconsReloaded icon-padding-horizontal 0
 gsettings --schemadir "$sd" set org.gnome.shell.extensions.trayIconsReloaded tray-margin-left 0
 
+# Pop Shell
+gsettings set org.gnome.shell.extensions.pop-shell hint-color-rgba "rgb(180,190,254)"
+gsettings set org.gnome.shell.extensions.pop-shell active-hint true
+gsettings set org.gnome.shell.extensions.pop-shell gap-inner 3
+gsettings set org.gnome.shell.extensions.pop-shell gap-outer 3
+
 # Set wallpaper
 printf "\nSetting wallpaper...\n"
 wallpaper_path="${HOME}/Pictures/wallpaper.png"
