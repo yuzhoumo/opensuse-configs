@@ -62,14 +62,14 @@ sudo cp ../assets/images/profile.png "/var/lib/AccountsService/icons/${USER}"
 # Set Gnome shell theme
 printf "\nSetting Gnome shell theme to catppuccin...\n"
 theme="catppuccin-mocha-lavender"
-mkdir -p "${HOME}/.themes" && \
+mkdir -p "${HOME}/.themes/${theme}" && \
   cp -r "../assets/gnome/${theme}/." "${HOME}/.themes/${theme}/."
 gsettings set org.gnome.shell.extensions.user-theme name catppuccin-mocha-lavender
 gsettings set org.gnome.desktop.interface gtk-theme catppuccin-mocha-lavender
 
 # Set Gnome dark theme
 printf "\nSetting Gnome dark theme...\n"
-gesttings set org.gnome.desktop.interface color-scheme "prefer-dark"
+gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
 
 # Add ibus input to Gnome kitty shortcut
 printf "\nSetting kitty shortcut to use ibus...\n"
