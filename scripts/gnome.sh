@@ -16,7 +16,7 @@ cd "$(dirname "${0}")" || exit
 printf "\nInstalling Gnome extensions...\n\n"
 ../assets/gnome/gnome-shell-extension-installer 307 744 7 355 2890 5470
 
-printf "\nConfiguring Gnome extensions...\n\n"
+printf "\nConfiguring Gnome extensions...\n"
 
 # Enable extensions
 uuids=(
@@ -90,5 +90,18 @@ gsettings set org.gnome.desktop.peripherals.mouse accel-profile flat
 # Set clock format to 12 hour
 printf "\nSetting clock format to AM/PM...\n"
 gsettings set org.gnome.desktop.interface clock-format '12h'
+
+# Set keybindings and disable conflicts with Pop Shell
+printf "\nSetting Gnome keyboard shortcuts...\n"
+gsettings set org.gnome.shell.extensions.pop-shell focus-down "['<Super>j']"
+gsettings set org.gnome.shell.extensions.pop-shell focus-left "['<Super>h']"
+gsettings set org.gnome.shell.extensions.pop-shell focus-right "['<Super>l']"
+gsettings set org.gnome.shell.extensions.pop-shell focus-up "['<Super>k']"
+gsettings set org.gnome.desktop.wm.keybindings close "['<Super>q']"
+gsettings set org.gnome.desktop.wm.keybindings maximize "[]"
+gsettings set org.gnome.desktop.wm.keybindings minimize "[]"
+gsettings set org.gnome.mutter.keybindings toggle-tiled-left "[]"
+gsettings set org.gnome.mutter.keybindings toggle-tiled-right "[]"
+gsettings set org.gnome.desktop.wm.keybindings unmaximize "[]"
 
 printf "\nGnome configurations have been installed\n"
