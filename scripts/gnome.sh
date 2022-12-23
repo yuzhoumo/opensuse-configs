@@ -92,6 +92,16 @@ gsettings set org.gnome.desktop.peripherals.mouse accel-profile flat
 printf "\nSetting clock format to AM/PM...\n"
 gsettings set org.gnome.desktop.interface clock-format '12h'
 
+# Set favorited applications
+printf "\nSetting favorited applications...\n"
+apps="['org.gnome.Nautilus.desktop', 'com.bitwarden.desktop.desktop',"
+apps+="'md.obsidian.Obsidian.desktop', 'thunderbird.desktop',"
+apps+="'firefox.desktop', 'com.spotify.Client.desktop',"
+apps+="'com.discordapp.Discord.desktop', 'com.slack.Slack.desktop',"
+apps+="'org.signal.Signal.desktop', 'com.synology.SynologyDrive.desktop',"
+apps+="'kitty.desktop']"
+gsettings set org.gnome.shell favorite-apps "$apps"
+
 # Set language input methods
 printf "\nSetting language input methods...\n"
 gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'us'), ('ibus', 'libpinyin')]"
