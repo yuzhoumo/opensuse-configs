@@ -13,6 +13,7 @@ zypper_pkgs=(
   git
   htop
   ibus            # language input
+  ibus-libpinyin  # pinyin input
   neofetch
   neovim
   nodejs-default
