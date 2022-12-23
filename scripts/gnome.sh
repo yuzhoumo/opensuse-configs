@@ -66,7 +66,10 @@ gsettings set org.gnome.desktop.background picture-uri-dark "file://${wallpaper_
 
 # Set profile picture
 printf "\nSetting profile picture...\n"
-sudo cp ../assets/images/profile.png "/var/lib/AccountsService/icons/${USER}"
+picture="profile.png"
+sudo cp "../assets/images/${picture}" "/var/lib/AccountsService/users/${USER}"
+sudo cp "../assets/images/${picture}" "/var/lib/AccountsService/icons/${USER}"
+cp "../assets/images/${picture}" "${HOME}/.face"
 
 # Set Gnome shell theme
 printf "\nSetting Gnome shell theme to catppuccin...\n"
