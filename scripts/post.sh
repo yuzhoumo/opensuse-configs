@@ -30,4 +30,4 @@ done
 printf "\nInstalling neovim plugins...\n\n"
 nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 
-printf "\nCompleted post-install configurations/n"
+printf "\nCompleted post-install configurations\n"

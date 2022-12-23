@@ -18,4 +18,8 @@ printf "\nInstall Firefox theme and sign in...\n"
 firefox ../assets/firefox/firefox-catppuccin-mocha-lavender.xpi
 prompt_continue
 
+printf "\nSet weather location...\n"
+gapplication launch org.gnome.Weather
+prompt_continue
+
 printf "\n\x1b[32mDone with manual setup.\x1b[0m\n\n"
