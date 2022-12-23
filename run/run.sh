@@ -15,9 +15,6 @@ cd "$(dirname "${0}")" || exit
 printf "\nLaunching automated setup...\n"
 ./auto.sh
 
-# Set volume to 50% and alert user
-amixer set Master 50% && espeak-ng "Automated setup complete."
-
 # Run interactive guide for manually configured settings
 printf "\n🚀 \x1b[32mPress ENTER to continue to manual setup...\x1b[0m" && read -r
 ./manual.sh

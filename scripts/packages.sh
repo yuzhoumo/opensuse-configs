@@ -8,7 +8,6 @@ zypper_pkgs=(
   # CLI
   bat
   btop
-  espeak-ng       # text to speech engine
   flatpak         # for packages missing from zypper
   gcc-c++         # c++ gcc support, for nvim plugins
   git
