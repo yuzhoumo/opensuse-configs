@@ -39,6 +39,7 @@ sd="${HOME}/.local/share/gnome-shell/extensions/dash-to-dock@micxgx.gmail.com/sc
 gsettings --schemadir "$sd" set org.gnome.shell.extensions.dash-to-dock custom-theme-shrink true
 gsettings --schemadir "$sd" set org.gnome.shell.extensions.dash-to-dock transparency-mode 'DYNAMIC'
 gsettings --schemadir "$sd" set org.gnome.shell.extensions.dash-to-dock dash-max-icon-size 32
+gsettings --schemadir "$sd" set org.gnome.shell.extensions.dash-to-dock disable-overview-on-startup true
 
 # Status Area Horizontal Spacing
 sd="${HOME}/.local/share/gnome-shell/extensions/status-area-horizontal-spacing@mathematical.coffee.gmail.com/schemas/"
