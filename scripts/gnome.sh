@@ -48,6 +48,8 @@ gsettings --schemadir "$sd" set org.gnome.shell.extensions.status-area-horizonta
 # Tray Icons: Reloaded
 sd="${HOME}/.local/share/gnome-shell/extensions/trayIconsReloaded@selfmade.pl/schemas/"
 gsettings --schemadir "$sd" set org.gnome.shell.extensions.trayIconsReloaded icon-margin-horizontal 4
+gsettings --schemadir "$sd" set org.gnome.shell.extensions.trayIconsReloaded icon-padding-horizontal 0
+gsettings --schemadir "$sd" set org.gnome.shell.extensions.trayIconsReloaded tray-margin-left 0
 
 # Set wallpaper
 printf "\nSetting wallpaper...\n"
