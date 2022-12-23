@@ -19,6 +19,9 @@ printf "\nSetting zsh as default shell...\n\n"
 grep -w 'zsh' /etc/shells || command -v zsh | sudo tee -a /etc/shells
 [[ $SHELL =~ ^.*/zsh$ ]] || sudo chsh -s "$(which zsh)" "$USER"
 
+# Install rust
+rustup default stable
+
 # Copy Firefox user.js to all default profiles
 printf "\nSetting user.js file for Firefox profiles...\n\n"
 for profile in $(ls "${ff_profiles_dir}" | grep default); do
