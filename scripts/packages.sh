@@ -60,6 +60,8 @@ flathub_pkgs=(
 # Packages to remove
 zypper_rm=(
   bijiben               # note editor
+  evolution             # mail/calendar client
+  evolution-ews         # microsoft exchange connector for evolution
   gnome-chess
   gnome-contacts
   gnome-mahjongg
