@@ -29,6 +29,11 @@ for profile in $(ls "${ff_profiles_dir}" | grep default); do
   printf "Found profile: %s\n" "${ff_profiles_dir}/${profile}"
 done
 
+# Configure GIMP to be more like Photoshop
+printf "\nInstalling PhotoGIMP tweaks...\n"
+mkdir -p "${HOME}/.config/GIMP/2.10" && \
+  cp -r "../assets/gimp/." "${HOME}/.config/GIMP/2.10/."
+
 # Install neovim plugins
 printf "\nInstalling neovim plugins...\n\n"
 nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
