@@ -17,6 +17,7 @@ zypper_pkgs=(
   neofetch
   neovim
   nodejs-default
+  protonvpn-gui
   rustup
   ShellCheck      # shell script linter
   tmux
