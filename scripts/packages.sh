@@ -68,6 +68,7 @@ zypper_rm=(
   gnome-photos
   gnome-remote-desktop
   gnome-sudoku
+  gnome-user-docs       # help docs
   iagno                 # reversi game
   lightsoff             # puzzle game
   opensuse-welcome      # welcome page
@@ -80,6 +81,7 @@ zypper_rm=(
   transmission-gtk      # torrent client
   vinagre               # remote desktop lib
   xscreensaver
+  yelp                  # help docs browser
 )
 
 # Enable third party repositories and resolve conflicts
