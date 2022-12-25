@@ -3,7 +3,7 @@
 # Author: Yuzhou "Joe" Mo (@yuzhoumo)
 # License: GNU GPLv3
 
-hostname="nexus"
+hostname="nexus9" # Bladerunner naming scheme
 ff_userjs="../assets/firefox/user.js"
 ff_profiles_dir="${HOME}/.mozilla/firefox"
 

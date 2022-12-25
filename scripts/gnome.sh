@@ -37,10 +37,11 @@ done
 # Dash to Dock
 sd="${HOME}/.local/share/gnome-shell/extensions/dash-to-dock@micxgx.gmail.com/schemas/"
 gsettings --schemadir "$sd" set org.gnome.shell.extensions.dash-to-dock custom-theme-shrink true
-gsettings --schemadir "$sd" set org.gnome.shell.extensions.dash-to-dock transparency-mode 'DYNAMIC'
+gsettings --schemadir "$sd" set org.gnome.shell.extensions.dash-to-dock transparency-mode "DYNAMIC"
 gsettings --schemadir "$sd" set org.gnome.shell.extensions.dash-to-dock dash-max-icon-size 32
 gsettings --schemadir "$sd" set org.gnome.shell.extensions.dash-to-dock disable-overview-on-startup true
 gsettings --schemadir "$sd" set org.gnome.shell.extensions.dash-to-dock hot-keys false
+gsettings --schemadir "$sd" set org.gnome.shell.extensions.dash-to-dock intellihide-mode "ALL_WINDOWS"
 
 # Status Area Horizontal Spacing
 sd="${HOME}/.local/share/gnome-shell/extensions/status-area-horizontal-spacing@mathematical.coffee.gmail.com/schemas/"
@@ -89,8 +90,12 @@ printf "\nSetting theme and configs for gedit...\n"
 theme="gedit-catppuccin-mocha.xml"
 mkdir -p "${HOME}/.local/share/gedit/styles" && \
   cp "../assets/gnome/${theme}" "${HOME}/.local/share/gedit/styles/${theme}"
+
+plugins="['spell', 'sort', 'quickhighlight', 'modelines', 'filebrowser',"
+plugins+="'docinfo', 'snippets']"
+
+gsettings set org.gnome.gedit.plugins active-plugins "${plugins}"
 gsettings set org.gnome.gedit.preferences.editor scheme "catppuccin_mocha"
-gsettings set org.gnome.gedit.plugins active-plugins "['spell', 'sort', 'quickhighlight', 'modelines', 'filebrowser', 'docinfo', 'snippets']"
 gsettings set org.gnome.gedit.preferences.editor editor-font "Hack Nerd Font Mono 12"
 gsettings set org.gnome.gedit.preferences.editor insert-spaces true
 gsettings set org.gnome.gedit.preferences.editor right-margin-position 80
@@ -120,12 +125,14 @@ gsettings set org.gnome.desktop.interface clock-format '12h'
 
 # Set favorited applications
 printf "\nSetting favorited applications...\n"
+
 apps="['org.gnome.Nautilus.desktop', 'com.bitwarden.desktop.desktop',"
 apps+="'md.obsidian.Obsidian.desktop', 'thunderbird.desktop',"
 apps+="'firefox.desktop', 'com.spotify.Client.desktop',"
 apps+="'com.discordapp.Discord.desktop', 'com.slack.Slack.desktop',"
 apps+="'org.signal.Signal.desktop', 'com.synology.SynologyDrive.desktop',"
 apps+="'kitty.desktop']"
+
 gsettings set org.gnome.shell favorite-apps "$apps"
 
 # Set language input methods
