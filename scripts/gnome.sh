@@ -61,6 +61,9 @@ gsettings set org.gnome.shell.extensions.pop-shell active-hint true
 gsettings set org.gnome.shell.extensions.pop-shell gap-inner 3
 gsettings set org.gnome.shell.extensions.pop-shell gap-outer 3
 
+# Sort folders before files in file explorer
+gsettings set org.gtk.gtk4.Settings.FileChooser sort-directories-first true
+
 # Set wallpaper
 printf "\nSetting wallpaper...\n"
 wallpaper_path="${HOME}/Pictures/wallpaper.png"
