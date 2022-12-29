@@ -7,6 +7,7 @@
 cd "$(dirname "${0}")" || exit
 
 # Install Gnome extensions
+#  517 | Caffeine
 #  307 | Dash to Dock
 #  744 | Hide Activities Button
 #    7 | Removable Drive Menu
@@ -14,12 +15,13 @@ cd "$(dirname "${0}")" || exit
 # 2890 | Tray Icons: Reloaded
 # 5470 | Weather O'Clock
 printf "\nInstalling Gnome extensions...\n\n"
-../assets/gnome/gnome-shell-extension-installer 307 744 7 355 2890 5470
+../assets/gnome/gnome-shell-extension-installer 307 517 744 7 355 2890 5470
 
 printf "\nConfiguring Gnome extensions...\n"
 
 # Enable extensions
 uuids=(
+  caffeine@patapon.info
   dash-to-dock@micxgx.gmail.com
   Hide_Activities@shay.shayel.org
   drive-menu@gnome-shell-extensions.gcampax.github.com
