@@ -17,7 +17,6 @@ zypper_pkgs=(
   neofetch
   neovim
   nodejs-default
-  protonvpn-gui
   rustup
   ShellCheck      # shell script linter
   tmux
@@ -29,7 +28,6 @@ zypper_pkgs=(
   # GUI
   deluge
   kitty
-  MozillaThunderbird
   steam
   torbrowser-launcher
   vlc
@@ -37,7 +35,6 @@ zypper_pkgs=(
   # Gnome extensions
   gnome-themes
   gnome-shell-extension-user-theme
-  gnome-shell-extension-pop-shell
 
   # Nvidia drivers
   nvidia-glG06
@@ -49,7 +46,6 @@ flathub_pkgs=(
   com.bitwarden.desktop
   com.discordapp.Discord
   md.obsidian.Obsidian
-  ch.protonmail.protonmail-bridge
   org.signal.Signal
   com.slack.Slack
   com.spotify.Client

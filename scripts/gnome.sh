@@ -29,7 +29,6 @@ uuids=(
   trayIconsReloaded@selfmade.pl
   weatheroclock@CleoMenezesJr.github.io
   user-theme@gnome-shell-extensions.gcampax.github.com
-  pop-shell@system76.com
 )
 
 for id in "${uuids[@]}"; do
@@ -54,12 +53,6 @@ sd="${HOME}/.local/share/gnome-shell/extensions/trayIconsReloaded@selfmade.pl/sc
 gsettings --schemadir "$sd" set org.gnome.shell.extensions.trayIconsReloaded icon-margin-horizontal 4
 gsettings --schemadir "$sd" set org.gnome.shell.extensions.trayIconsReloaded icon-padding-horizontal 0
 gsettings --schemadir "$sd" set org.gnome.shell.extensions.trayIconsReloaded tray-margin-left 0
-
-# Pop Shell
-gsettings set org.gnome.shell.extensions.pop-shell hint-color-rgba "rgb(180,190,254)"
-gsettings set org.gnome.shell.extensions.pop-shell active-hint true
-gsettings set org.gnome.shell.extensions.pop-shell gap-inner 3
-gsettings set org.gnome.shell.extensions.pop-shell gap-outer 3
 
 # Sort folders before files in file explorer
 gsettings set org.gtk.gtk4.Settings.FileChooser sort-directories-first true
@@ -152,15 +145,6 @@ gsettings set org.gnome.desktop.interface enable-hot-corners false
 
 # Set keybindings and disable conflicts with Pop Shell
 printf "\nSetting Gnome keyboard shortcuts...\n"
-gsettings set org.gnome.shell.extensions.pop-shell focus-down "['<Super>j']"
-gsettings set org.gnome.shell.extensions.pop-shell focus-left "['<Super>h']"
-gsettings set org.gnome.shell.extensions.pop-shell focus-right "['<Super>l']"
-gsettings set org.gnome.shell.extensions.pop-shell focus-up "['<Super>k']"
 gsettings set org.gnome.desktop.wm.keybindings close "['<Super>q']"
-gsettings set org.gnome.desktop.wm.keybindings maximize "[]"
-gsettings set org.gnome.desktop.wm.keybindings minimize "[]"
-gsettings set org.gnome.mutter.keybindings toggle-tiled-left "[]"
-gsettings set org.gnome.mutter.keybindings toggle-tiled-right "[]"
-gsettings set org.gnome.desktop.wm.keybindings unmaximize "[]"
 
 printf "\nGnome configurations have been installed\n"
